@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj": {}
+    "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj": {}
   },
   "projects": {
-    "c:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj": {
+    "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
+        "projectUniqueName": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
         "projectName": "SistemasDistribuidos",
-        "projectPath": "c:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
+        "projectPath": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
         "packagesPath": "C:\\Users\\ka-ro\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\obj\\",
+        "outputPath": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
