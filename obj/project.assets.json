@@ -193,30 +193,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ka-ro\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Kaike\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
+      "projectUniqueName": "C:\\Users\\Kaike\\Documents\\Code\\ProjetoDestro\\SistemasDistribuidos.csproj",
       "projectName": "SistemasDistribuidos",
-      "projectPath": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\SistemasDistribuidos.csproj",
-      "packagesPath": "C:\\Users\\ka-ro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ka-ro\\OneDrive\\Documentos\\Code\\ProjetoCurso\\SistemasDistribuidos\\obj\\",
+      "projectPath": "C:\\Users\\Kaike\\Documents\\Code\\ProjetoDestro\\SistemasDistribuidos.csproj",
+      "packagesPath": "C:\\Users\\Kaike\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kaike\\Documents\\Code\\ProjetoDestro\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ka-ro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Kaike\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -258,7 +252,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

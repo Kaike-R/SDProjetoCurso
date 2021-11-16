@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace SistemasDistribuidos.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("1")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
