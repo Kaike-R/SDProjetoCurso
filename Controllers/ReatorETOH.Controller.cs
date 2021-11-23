@@ -9,33 +9,33 @@ using SistemasDistribuidos.Models;
 namespace SistemasDistribuidos.Controllers
 {
     [ApiController]
-    [Route("ReatorNaoh")]
-    public class ReatorNAOHController:ControllerBase
+    [Route("ReatorEtoh")]
+    public class ReatorETOHController:ControllerBase
     {
-        ReatorNAOH tanque = ReatorNAOH.getInstance();
+        ReatorETOH tanque = ReatorETOH.getInstance();
 
         Random rnd = new Random();
 
         [HttpPost]
-        [Route("SetNaoh")]
+        [Route("SetEtoh")]
         public async Task<ActionResult<dynamic>> EntradaDeNaoh()
         {
 
-            //await Task.Delay(250);
-            double tempo = 0.25;
+            await Task.Delay(250);
+            double tempo = 0.125;
             tanque.Volume = tanque.Volume + tempo;
             return Ok(tanque.Volume);
         }
 
         [HttpGet]
-        [Route("SeeNaoh")]
+        [Route("SeeEtoh")]
         public async Task<ActionResult<dynamic>> verNaoh()
         {
             return Ok(tanque.Volume);
         }
 
         [HttpGet]
-        [Route("GetNaoh")]
+        [Route("GetEtoh")]
         public async Task<ActionResult<dynamic>> SaidaDeNaoh()
         {
 
