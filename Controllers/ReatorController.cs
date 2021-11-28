@@ -31,8 +31,8 @@ namespace SistemasDistribuidos.Controllers
             tanque.Oleo = tanque.Oleo + tempoOleo;
             tanque.Eaoh = tanque.Eaoh + tempoEaoh;
             tanque.Naoh = tanque.Naoh + tempoNaoh;
-            tanque.Mistura = tanque.Volume + tempo;
-            return Ok(tanque.Mistura);
+            tanque.Volume = tanque.Volume + tempo;
+            return Ok(tanque.Volume);
         }
 
         [HttpGet]
@@ -63,53 +63,50 @@ namespace SistemasDistribuidos.Controllers
         [Route("ProcessarLiquido")]
         public async Task<ActionResult<dynamic>> ProcessarLiquido()
         {
-            
-            // await Task.Delay(1000);
 
-            if (tanque.Volume /4 == tanque.Naoh && tanque.Volume/4 == tanque.Oleo && tanque.Volume/2 == tanque.Eaoh)
-            {
-                if (tanque.Mistura > 5)
+            // await Task.Delay(1000);
+                if (tanque.Volume > 5)
                 {
-                    tanque.Mistura = tanque.Mistura - 5;
+                    tanque.Volume = tanque.Volume - 5;
+                    tanque.Mistura = tanque.Mistura + 5;
                     return Ok(5);
                 }
-                    if (tanque. Mistura == 5)
+                    if (tanque.Volume == 5)
                 {
-                    tanque.Mistura = tanque.Mistura - 5;
+                    tanque.Mistura = tanque.Mistura + 5;
+                    tanque.Volume = tanque.Volume - 5;
                     return Ok(5);
                 }   
                     else
                 {
-                    var temp = tanque.Mistura;
-                    tanque.Mistura = 0;
+                    var temp = tanque.Volume;
+                    tanque.Volume = 0;
+                    tanque.Mistura = tanque.Mistura + temp;
                     return Ok(temp);
  
                 }
                   
-            }
-            else {
-                return Ok(0);
-            }
+            
         }
 
         [HttpPost]
         [Route("PostVolume")]
         public async Task<ActionResult<dynamic>> PostVolume(){
 
-            if (tanque.Volume > 6)
+            if (tanque.Mistura > 3)
             {
-                tanque.Volume = tanque.Volume - 6;
-                return Ok(6);
+                tanque.Mistura = tanque.Mistura - 3;
+                return Ok(3);
             }
-            if (tanque.Volume == 6)
+            if (tanque.Mistura == 3)
             {
-                tanque.Volume = tanque.Volume - 6;
-                return Ok(6);
+                tanque.Mistura = tanque.Mistura - 3;
+                return Ok(3);
             }
             else
             {
-                var temp = tanque.Volume;
-                tanque.Volume = 0;
+                var temp = tanque.Mistura;
+                tanque.Mistura = 0;
                 return Ok(temp);
  
             }

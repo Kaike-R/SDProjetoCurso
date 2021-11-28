@@ -38,17 +38,17 @@ namespace SistemasDistribuidos.Controllers
         [Route("GetNaoh")]
         public async Task<ActionResult<dynamic>> SaidaDeNaoh()
         {
-
+            //limitando a saida para cobrir a proporção
             //await Task.Delay(1000);
-            if (tanque.Volume > 1)
+            if (tanque.Volume > 0.041)
             {
-                tanque.Volume = tanque.Volume - 1;
-                return Ok(1);
+                tanque.Volume = tanque.Volume - 0.041;
+                return Ok(0.041);
             }
-            if (tanque.Volume == 1)
+            if (tanque.Volume == 0.041)
             {
-                tanque.Volume = tanque.Volume - 1;
-                return Ok(1);
+                tanque.Volume = tanque.Volume - 0.041;
+                return Ok(0.041);
             }
             else
             {

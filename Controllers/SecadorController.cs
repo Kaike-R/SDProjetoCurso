@@ -14,6 +14,7 @@ namespace SistemasDistribuidos.Controllers
     public class SecadorController : ControllerBase
     {
         Secador tanque = Secador.getInstance();
+        TanqueDeBiodisel bio = TanqueDeBiodisel.getInstance();
         Random rnd = new Random();
 
         [HttpPost]
@@ -40,17 +41,20 @@ namespace SistemasDistribuidos.Controllers
             if (tanque.Volume > 0.2)
             {
                 tanque.Volume = tanque.Volume - 0.2;
+                bio.Volume = bio.Volume + 0.2;
                 return Ok(0.2);
             }
             if (tanque.Volume == 0.2)
             {
                 tanque.Volume = tanque.Volume - 0.2;
+                bio.Volume = bio.Volume + 0.2;
                 return Ok(0.2);
             }
             else
             {
                 var temp = tanque.Volume;
                 tanque.Volume = 0;
+                bio.Volume = bio.Volume + temp;
                 return Ok(temp);
             }
             

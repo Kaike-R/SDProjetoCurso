@@ -42,15 +42,15 @@ namespace SistemasDistribuidos.Controllers
         {
 
             //await Task.Delay(1000);
-            if (tanque.Volume > 0.5)
+            if (tanque.Volume > 0.08)
             {
-                tanque.Volume = tanque.Volume - 0.5;
-                return Ok(0.5);
+                tanque.Volume = tanque.Volume - 0.08;
+                return Ok(0.08);
             }
-            if (tanque.Volume == 0.5)
+            if (tanque.Volume == 0.08)
             {
-                tanque.Volume = tanque.Volume - 0.5;
-                return Ok(0.5);
+                tanque.Volume = tanque.Volume - 0.08;
+                return Ok(0.08);
             }
             else
             {

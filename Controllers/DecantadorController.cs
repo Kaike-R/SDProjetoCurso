@@ -8,7 +8,7 @@ namespace SistemasDistribuidos.Controllers
 {
     
     [ApiController]
-    [Route("Secador")]
+    [Route("Decantador")]
     public class DecantadorController : ControllerBase
     {
         Decantador tanque = Decantador.getInstance();

@@ -8,23 +8,16 @@ using SistemasDistribuidos.Models;
 
 namespace SistemasDistribuidos.Controllers
 {
-    
     [ApiController]
-    [Route("TanqueDeBiodisel")]
-    public class TanqueDeBiodiselController : ControllerBase
+    [Route("TanqueDeGli")]
+    public class TanqueDeGlicerinaController : ControllerBase
     {
-        TanqueDeBiodisel tanque = TanqueDeBiodisel.getInstance();
-        Random rnd = new Random();
-
-        
+        TanqueGlicerina tanque = TanqueGlicerina.getInstance();
 
         [HttpGet]
-        [Route("SeeBiodisel")]
-        public async Task<ActionResult<dynamic>> VerBiodisel(){
+        [Route("SeeGli")]
+        public async Task<ActionResult<dynamic>> VerGli(){
             return Ok(tanque.Volume);
         }
-
-
-
     }
-}  
+}
