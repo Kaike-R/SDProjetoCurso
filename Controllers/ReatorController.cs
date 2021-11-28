@@ -27,7 +27,7 @@ namespace SistemasDistribuidos.Controllers
             double tempoEaoh = model.Etoh;
             double tempoNaoh = model.Naoh;
             double tempo = tempoOleo + tempoEaoh + tempoNaoh;
-
+            
             tanque.Oleo = tanque.Oleo + tempoOleo;
             tanque.Eaoh = tanque.Eaoh + tempoEaoh;
             tanque.Naoh = tanque.Naoh + tempoNaoh;
@@ -41,11 +41,29 @@ namespace SistemasDistribuidos.Controllers
             return Ok(tanque.Mistura);
         }
 
+        [HttpGet]
+        [Route("GetEtoh")]
+        public async Task<ActionResult<dynamic>> GetEtoh(){
+            return Ok(tanque.Eaoh);
+        }
+
+        [HttpGet]
+        [Route("GetNaoh")]
+        public async Task<ActionResult<dynamic>> GetNaoh(){
+            return Ok(tanque.Naoh);
+        }
+
+        [HttpGet]
+        [Route("GetOleo")]
+        public async Task<ActionResult<dynamic>> GetOleo(){
+            return Ok(tanque.Oleo);
+        }
+
         [HttpPost]
         [Route("ProcessarLiquido")]
         public async Task<ActionResult<dynamic>> ProcessarLiquido()
         {
-
+            
             // await Task.Delay(1000);
 
             if (tanque.Volume /4 == tanque.Naoh && tanque.Volume/4 == tanque.Oleo && tanque.Volume/2 == tanque.Eaoh)
@@ -70,7 +88,7 @@ namespace SistemasDistribuidos.Controllers
                   
             }
             else {
-                return Ok("reator não ativado");
+                return Ok(0);
             }
         }
 

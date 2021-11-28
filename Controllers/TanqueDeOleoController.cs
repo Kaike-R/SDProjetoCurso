@@ -22,20 +22,26 @@ namespace SistemasDistribuidos.Controllers
         {
 
             
-            await Task.Delay(10000);
+            //await Task.Delay(10000);
             double tempo = 1 + 0.1* rnd.Next(10);
             tanque.Volume = tanque.Volume + tempo;
             return Ok(tanque.Volume);
         }
 
-        
+        [HttpGet]
+        [Route("SeeOleo")]
+        public async Task<ActionResult<dynamic>> VerOleo(){
+            return Ok(tanque.Volume);
+        }
+
+
 
         [HttpGet]
         [Route("GetOleo")]
         public async Task<ActionResult<dynamic>> SaidaDeOleo()
         {
 
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             if (tanque.Volume > 0.5)
             {
                 tanque.Volume = tanque.Volume - 0.5;

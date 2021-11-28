@@ -21,7 +21,7 @@ namespace SistemasDistribuidos.Controllers
         public async Task<ActionResult<dynamic>> EntradaDeNaoh()
         {
 
-            await Task.Delay(250);
+            //await Task.Delay(250);
             double tempo = 0.125;
             tanque.Volume = tanque.Volume + tempo;
             return Ok(tanque.Volume);
@@ -39,7 +39,7 @@ namespace SistemasDistribuidos.Controllers
         public async Task<ActionResult<dynamic>> SaidaDeNaoh()
         {
 
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             if (tanque.Volume > 1)
             {
                 tanque.Volume = tanque.Volume - 1;

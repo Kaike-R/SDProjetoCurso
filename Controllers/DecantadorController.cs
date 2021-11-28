@@ -21,13 +21,14 @@ namespace SistemasDistribuidos.Controllers
         public async Task<ActionResult<dynamic>> EntradaSecador([FromBody] Entrada usr)
         {   
             //await Task.Delay(10000);
-            if (tanque.Volume >= 10)
+            if (tanque.Volume + usr.x >= 10)
             {
-                return Ok("Cheio");
+                return Ok(42);
             }
             double tempo = usr.x;
             tanque.Volume = tanque.Volume + tempo;
             return Ok(tanque.Volume);
+            
         }
 
         [HttpGet]
@@ -41,17 +42,24 @@ namespace SistemasDistribuidos.Controllers
         [Route("GetDecantador")]
         public async Task<ActionResult<dynamic>> SaidaDecantador()
         {
+            if (tanque.Volume == 0)
+            {
+                return Ok(0);
+            }
+            else
+            {
+                double gli = tanque.Volume * 3/100;
+                tanqueGlicerina.Volume = gli + tanqueGlicerina.Volume;
 
-            double gli = tanque.Volume * 3/100;
-            tanqueGlicerina.Volume = gli + tanqueGlicerina.Volume;
+                double etoh = tanque.Volume * 9/100;
+                double perda = etoh * 2.5/100;
+                etoh = etoh -perda;
+                reatorEtoh.Volume = reatorEtoh.Volume + etoh; 
 
-            double etoh = tanque.Volume * 9/100;
-            double perda = etoh * 2.5/100;
-            etoh = etoh -perda;
-            reatorEtoh.Volume = reatorEtoh.Volume + etoh; 
-
-            double solucao = tanque.Volume * 88/100;
-            return Ok(solucao);
+                double solucao = tanque.Volume * 88/100;
+                return Ok(solucao);
+            }
+            
            
         }
 

@@ -39,7 +39,7 @@ namespace SistemasDistribuidos.Controllers
         public async Task<ActionResult<dynamic>> SaidaDeNaoh()
         {
 
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             if (tanque.Volume > 1)
             {
                 tanque.Volume = tanque.Volume - 1;

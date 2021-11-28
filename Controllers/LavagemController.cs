@@ -114,7 +114,7 @@ namespace SistemasDistribuidos.Controllers
         //lavagem 3
 
         [HttpPost]
-        [Route("SetLavagem")]
+        [Route("SetLavagem3")]
         public async Task<ActionResult<dynamic>> EntradaLavagem3([FromBody] Entrada3 usr)
         {   
             //await Task.Delay(10000);
@@ -127,7 +127,7 @@ namespace SistemasDistribuidos.Controllers
         }
 
         [HttpGet]
-        [Route("SeeLavagem")]
+        [Route("SeeLavagem3")]
         public async Task<ActionResult<dynamic>> Ver3()
         {
             return Ok(lavagem3.Volume);

@@ -1,7 +1,7 @@
 
 namespace SistemasDistribuidos.Models
 {
-    public class Entrada
+    public class Entrada4
     {
         public double x { get; set; }
     }

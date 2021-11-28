@@ -10,7 +10,7 @@ namespace SistemasDistribuidos.Controllers
 {
     
     [ApiController]
-    [Route("TanqueDeOleo")]
+    [Route("Secador")]
     public class SecadorController : ControllerBase
     {
         Secador tanque = Secador.getInstance();
@@ -18,12 +18,13 @@ namespace SistemasDistribuidos.Controllers
 
         [HttpPost]
         [Route("SetSecador")]
-        public async Task<ActionResult<dynamic>> EntradaDeOlheo()
+        public async Task<ActionResult<dynamic>> EntradaDeOlheo([FromBody] Entrada4 usr)
         {
 
             
-            await Task.Delay(10000);
-            double tempo = 1 + 0.1* rnd.Next(10);
+            //await Task.Delay(10000);
+            double perde = tanque.Volume * 2.5 / 100 ;
+            double tempo = usr.x - perde;
             tanque.Volume = tanque.Volume + tempo;
             return Ok(tanque.Volume);
         }
@@ -31,20 +32,20 @@ namespace SistemasDistribuidos.Controllers
         
 
         [HttpGet]
-        [Route("GetOleo")]
+        [Route("GetSecador")]
         public async Task<ActionResult<dynamic>> SaidaDeOleo()
         {
 
-            await Task.Delay(1000);
-            if (tanque.Volume > 0.5)
+            //await Task.Delay(1000);
+            if (tanque.Volume > 0.2)
             {
-                tanque.Volume = tanque.Volume - 0.5;
-                return Ok(0.5);
+                tanque.Volume = tanque.Volume - 0.2;
+                return Ok(0.2);
             }
-            if (tanque.Volume == 0.5)
+            if (tanque.Volume == 0.2)
             {
-                tanque.Volume = tanque.Volume - 0.5;
-                return Ok(0.5);
+                tanque.Volume = tanque.Volume - 0.2;
+                return Ok(0.2);
             }
             else
             {
