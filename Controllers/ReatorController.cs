@@ -13,7 +13,7 @@ namespace SistemasDistribuidos.Controllers
     public class ReatorController:ControllerBase
     {
         Reator tanque = Reator.getInstance();
-
+        Ciclos cic = Ciclos.getInstance();
         Random rnd = new Random();
 
         [HttpPost]
@@ -59,12 +59,19 @@ namespace SistemasDistribuidos.Controllers
             return Ok(tanque.Oleo);
         }
 
+        [HttpGet]
+        [Route("GetCiclos")]
+        public async Task<ActionResult<dynamic>> GetCiclos(){
+            return Ok(cic.ciclos);
+        }
+
         [HttpPost]
         [Route("ProcessarLiquido")]
         public async Task<ActionResult<dynamic>> ProcessarLiquido()
         {
 
             // await Task.Delay(1000);
+            cic.ciclos =  cic.ciclos + 1;
                 if (tanque.Volume > 5)
                 {
                     tanque.Volume = tanque.Volume - 5;
